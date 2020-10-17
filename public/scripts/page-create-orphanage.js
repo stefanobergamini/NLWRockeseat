@@ -82,8 +82,10 @@ function toggleSelect(event) {
 
 function validate(event) {
     //validar se slat e lng estao preechidos
-    const needsLatAndLng = false  //mudar aqui para o desafio document.querySelector('#mapid input')
-    if(needsLatAndLng) {
+    const needsLat = document.querySelector('[name = "lat"]')
+    const needsLng = document.querySelector('[name = "lng"]')
+    
+    if(!(needsLat.value && needsLng.value)) {
         event.preventDefault()
         alert('Selecione um ponto no mapa')
     }
